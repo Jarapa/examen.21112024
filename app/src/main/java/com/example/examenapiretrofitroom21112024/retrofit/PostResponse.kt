@@ -1,6 +1,6 @@
 package com.example.examenapiretrofitroom21112024.retrofit
 
-import com.example.examenapiretrofitroom21112024.data.Post
+import com.example.examenapiretrofitroom21112024.domain.Post
 import com.google.gson.annotations.SerializedName
 
 data class PostResponse(
@@ -11,14 +11,15 @@ data class PostResponse(
     @SerializedName("title")
     val title: String,
     @SerializedName("body")
-    val body: String
+    val body: String,
+
 )
 
-fun List<PostResponse>.toData(): List<Post> {
-    return this.map { it.toData() }
+fun List<PostResponse>.toDomain(): List<Post> {
+    return this.map { it.toDomain() }
 }
 
-fun PostResponse.toData(): Post {
+fun PostResponse.toDomain(): Post {
     return Post(
         userId = userId,
         id = id,

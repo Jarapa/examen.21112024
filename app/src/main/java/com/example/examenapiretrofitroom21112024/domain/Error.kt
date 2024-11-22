@@ -1,0 +1,3 @@
+package com.example.examenapiretrofitroom21112024.domain
+
+interface Error
